@@ -32,7 +32,9 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{
+              duration: 0.45
+            }}
           >
             <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
               <div className="w-10 sm:w-14 h-[2px] bg-[#d89b1d]" />
@@ -76,8 +78,7 @@ export default function Hero() {
                   key={i}
                   initial={{ opacity: 0, y: 25 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.12, duration: 0.5 }}
-                  whileHover={{ y: -6, scale: 1.02 }}
+                  transition={{ delay: 0.15 + i * 0.08, duration: 0.45 }} whileHover={{ y: -6, scale: 1.02 }}
                   className="relative overflow-hidden border border-white/10 bg-white/[0.06] backdrop-blur-xl rounded-[24px] sm:rounded-[30px] p-5 sm:p-6 min-h-[130px] sm:min-h-[160px] transition-all duration-500 hover:border-[#d89b1d]/40"
                 >
                   <h3 className="text-4xl sm:text-5xl font-black text-[#d89b1d]">

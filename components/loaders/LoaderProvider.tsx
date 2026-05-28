@@ -1,44 +1,57 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import ConstructionLoader from "./ConstructionLoader";
 
 export default function LoaderProvider({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    const pathname = usePathname();
-    const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
+  const firstLoad = useRef(true);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        setLoading(true);
+  useEffect(() => {
+    setLoading(true);
 
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 2100);
+    let timer: NodeJS.Timeout;
 
-        return () => clearTimeout(timer);
-    }, [pathname]);
+    const hideLoader = () => {
+      timer = setTimeout(
+        () => setLoading(false),
+        firstLoad.current ? 2600 : 1800
+      );
 
-    return (
-        <>
-            {loading && <ConstructionLoader />}
+      firstLoad.current = false;
+    };
 
-            <div
-                className={`
-          transition-all
-          duration-700
-          ease-out
-          ${loading
-                        ? "opacity-0 translate-y-6 scale-[0.98] blur-sm"
-                        : "opacity-100 translate-y-0 scale-100 blur-0"
-                    }
-        `}
-            >
-                {children}
-            </div>
-        </>
-    );
+    if (document.readyState === "complete") {
+      hideLoader();
+    } else {
+      window.addEventListener("load", hideLoader);
+    }
+
+    return () => {
+      window.removeEventListener("load", hideLoader);
+      clearTimeout(timer);
+    };
+  }, [pathname]);
+
+  return (
+    <>
+      {loading && <ConstructionLoader />}
+
+      <div
+        className={`transition-all duration-700 ease-out ${
+          loading
+            ? "opacity-0 translate-y-5 scale-[0.99]"
+            : "opacity-100 translate-y-0 scale-100"
+        }`}
+      >
+        {children}
+      </div>
+    </>
+  );
 }
