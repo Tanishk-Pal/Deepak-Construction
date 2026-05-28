@@ -146,7 +146,7 @@ async function ProjectClient({ id }: { id: string }) {
 
                             <video
                                 src={project.videoUrl}
-                                controls
+                                autoPlay
                                 muted
                                 loop
                                 playsInline

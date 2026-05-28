@@ -27,7 +27,7 @@ const services = [
     slug: "excavation-work",
     description:
       "Safe and large-scale excavation solutions executed with advanced equipment and technical expertise.",
-    image: "/excavation.webp",
+    image: "/excavation.png",
   },
 
   {
@@ -35,7 +35,7 @@ const services = [
     slug: "industrial-pipeline-systems",
     description:
       "Industrial-grade pipeline systems designed for durability, safety and long-term operational performance.",
-    image: "/industrial.webp",
+    image: "/industrial.png",
   },
 
   {
@@ -43,7 +43,7 @@ const services = [
     slug: "building-construction",
     description:
       "Professional building construction services with modern engineering and quality execution standards.",
-    image: "/building.webp",
+    image: "/building.png",
   },
 
   {
@@ -51,7 +51,7 @@ const services = [
     slug: "drainage-infrastructure",
     description:
       "Drainage and wastewater infrastructure systems for residential, industrial and urban development projects.",
-    image: "/drainage.webp",
+    image: "/drainage.png",
   },
 ];
 

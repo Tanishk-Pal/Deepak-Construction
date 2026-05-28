@@ -4,7 +4,7 @@ const services: any = {
     "water-pipeline-installation": {
         title: "Water Pipeline Installation",
         image: "/pipeline.png",
-        gallery: ["/pipeline1.webp", "/pipeline2.webp", "/pipeline3.webp"],
+        gallery: ["/pipeline1.png", "/pipeline2.png", "/pipeline3.png"],
         video: "/pipeline-video.mp4",
         description:
             "Deepak Construction provides professional underground and industrial water pipeline installation services using advanced machinery, precision engineering and durable infrastructure systems.",
@@ -14,7 +14,7 @@ const services: any = {
 
     "civil-construction": {
         title: "Civil Construction",
-        image: "/civil.webp",
+        image: "/building.png",
         gallery: ["/civil1.png", "/civil2.png", "/civil3.png"],
         video: "/civil-work.mp4",
         description:
@@ -25,8 +25,8 @@ const services: any = {
 
     "excavation-work": {
         title: "Excavation Work",
-        image: "/excavation.webp",
-        gallery: ["/excavation1.webp", "/excavation2.webp", "/excavation3.webp"],
+        image: "/excavation.png",
+        gallery: ["/excavation1.png", "/excavation2.png", "/excavation3.png"],
         video: "/Excavation.mp4",
         description:
             "Advanced excavation operations using modern heavy machinery and skilled operators.",
@@ -36,8 +36,8 @@ const services: any = {
 
     "industrial-pipeline-systems": {
         title: "Industrial Pipeline Systems",
-        image: "/industrial.webp",
-        gallery: ["/industrial1.webp", "/industrial2.webp", "/industrial3.webp"],
+        image: "/industrial.png",
+        gallery: ["/industrial1.png", "/industrial2.png", "/industrial3.png"],
         video: "/industrial-video.mp4",
         description:
             "Industrial-grade pipeline systems designed for performance, durability and operational safety.",
@@ -47,8 +47,8 @@ const services: any = {
 
     "building-construction": {
         title: "Building Construction",
-        image: "/building.webp",
-        gallery: ["/building1.webp", "/building2.webp", "/building3.webp"],
+        image: "/building.png",
+        gallery: ["/building1.png", "/building2.png", "/building3.png"],
         video: "/building-video.mp4",
         description:
             "Professional building construction services from foundation to structural execution.",
@@ -58,8 +58,8 @@ const services: any = {
 
     "drainage-infrastructure": {
         title: "Drainage Infrastructure",
-        image: "/drainage.webp",
-        gallery: ["/drainage1.webp", "/drainage2.webp", "/drainage3.webp"],
+        image: "/drainage.png",
+        gallery: ["/drainage1.png", "/drainage2.png", "/drainage3.png"],
         video: "/drainage-video.mp4",
         description:
             "Efficient drainage and wastewater infrastructure systems for urban and industrial development.",
@@ -221,7 +221,7 @@ export default async function ServicePage({
                         <div>
                             <video
                                 src={service.video}
-                                controls
+                                autoPlay
                                 muted
                                 loop
                                 playsInline
