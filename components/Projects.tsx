@@ -6,7 +6,6 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import SmoothScrolls from "@/components/animations/SmoothScrolls";
 import FadeUp from "@/components/animations/FadeUp";
 import FloatingCard from "@/components/animations/FloatingCard";
 import MagneticButton from "@/components/animations/MagneticButton";
@@ -38,7 +37,7 @@ export default function Projects() {
 
         <section
             id="projects"
-            className="relative overflow-hidden bg-[#f5f3ee] py-24 px-6"
+            className="relative overflow-hidden bg-[#f5f3ee] py-20 md:py-24 px-4 sm:px-6"
         >
 
             {/* BACKGROUND GLOW */}
@@ -50,39 +49,39 @@ export default function Projects() {
                 <FadeUp>
                     <FloatingCard>
 
-                    {/* TOP SECTION */}
-                    <div className="max-w-5xl mb-16">
+                        {/* TOP SECTION */}
+                        <div className="max-w-5xl mb-16">
 
-                        <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-center gap-3 mb-6">
 
-                            <div className="w-14 h-[2px] bg-[#d89b1d]"></div>
+                                <div className="w-14 h-[2px] bg-[#d89b1d]"></div>
 
-                            <p className="uppercase tracking-[5px] text-[#d89b1d] text-sm font-semibold">
-                                Latest Infrastructure Projects
+                                <p className="uppercase tracking-[5px] text-[#d89b1d] text-sm font-semibold">
+                                    Latest Infrastructure Projects
+                                </p>
+
+                            </div>
+
+                            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[1.05] text-black">
+
+                                Our Featured
+                                <span className="text-[#d89b1d]"> Projects</span>
+
+                            </h2>
+
+                            <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-8 sm:leading-10 mt-8 max-w-4xl">
+
+                                Deepak Construction delivers industrial,
+                                infrastructure and civil engineering projects
+                                with modern execution standards, advanced
+                                machinery and reliable construction quality.
+
                             </p>
 
                         </div>
-
-                        <h2 className="text-5xl md:text-7xl font-black leading-[1.05] text-black">
-
-                            Our Featured
-                            <span className="text-[#d89b1d]"> Projects</span>
-
-                        </h2>
-
-                        <p className="text-gray-600 text-xl leading-10 mt-10 max-w-4xl">
-
-                            Deepak Construction delivers industrial,
-                            infrastructure and civil engineering projects
-                            with modern execution standards, advanced
-                            machinery and reliable construction quality.
-
-                        </p>
-
-                    </div>
                     </FloatingCard>
                 </FadeUp>
-               
+
 
                 {/* PROJECTS GRID */}
                 <div className="space-y-16">
@@ -101,7 +100,7 @@ export default function Projects() {
                             <div className="grid lg:grid-cols-2 overflow-hidden rounded-[30px] bg-white border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
 
                                 {/* LEFT IMAGE / VIDEO */}
-                                <div className="relative overflow-hidden h-[280px] md:h-[340px] lg:h-[500px]">
+                                <div className="relative overflow-hidden h-[240px] sm:h-[300px] md:h-[360px] lg:h-[500px]">
 
                                     {/* VIDEO IF EXISTS */}
                                     {project.videoUrl ? (
@@ -142,7 +141,7 @@ export default function Projects() {
 
 
                                 {/* RIGHT CONTENT */}
-                                <div className="p-8 md:p-10 flex flex-col justify-center">
+                                <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-center">
 
                                     <div className="flex items-center gap-3 mb-6">
 
@@ -156,23 +155,23 @@ export default function Projects() {
 
 
                                     {/* TITLE */}
-                                    <h3 className="text-3xl md:text-4xl font-black leading-tight text-black mb-8">
+                                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight text-black mb-6 md:mb-8">
 
                                         {project.title}
 
                                     </h3>
 
                                     {/* DESCRIPTION */}
-                                    <p className="text-gray-600 text-lg leading-7">
+                                    <p className="text-gray-600 text-base sm:text-lg leading-7 sm:leading-9 mb-8">
 
                                         {project.description}
 
                                     </p>
 
                                     {/* PROJECT STATS */}
-                                    <div className="grid grid-cols-3 gap-4 mt-10">
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 sm:mt-10">
 
-                                        <div className="bg-[#f8f8f8] rounded-2xl p-5">
+                                        <div className="bg-[#f8f8f8] rounded-2xl p-4 sm:p-5">
 
                                             <h4 className="text-3xl font-black text-[#d89b1d]">
                                                 100%
@@ -184,7 +183,7 @@ export default function Projects() {
 
                                         </div>
 
-                                        <div className="bg-[#f8f8f8] rounded-2xl p-5">
+                                        <div className="bg-[#f8f8f8] rounded-2xl p-4 sm:p-5">
 
                                             <h4 className="text-3xl font-black text-[#d89b1d]">
                                                 Modern
@@ -196,7 +195,7 @@ export default function Projects() {
 
                                         </div>
 
-                                        <div className="bg-[#f8f8f8] rounded-2xl p-5">
+                                        <div className="bg-[#f8f8f8] rounded-2xl p-4 sm:p-5">
 
                                             <h4 className="text-3xl font-black text-[#d89b1d]">
                                                 Safe
@@ -211,23 +210,25 @@ export default function Projects() {
                                     </div>
 
                                     {/* BUTTONS */}
-                                    <div className="flex flex-wrap gap-5 mt-10">
+                                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-10 sm:mt-12">
 
                                         <Link href={`/projects/${project.id}`}>
 
                                             <MagneticButton
                                                 className="
-  bg-[#d89b1d]
-  text-black
-  px-10
-  py-5
-  rounded-full
-  font-black
-  hover:scale-105
-  transition-all
-  duration-300
-  shadow-[0_0_60px_rgba(216,155,29,0.35)]
-  "
+                                                w-full sm:w-auto
+                                              bg-[#d89b1d]
+                                              text-black
+                                                px-10
+                                                py-5
+                                                rounded-full
+                                                font-black
+                                                hover:scale-105
+                                                transition-all
+                                                duration-300
+                                                shadow-[0_0_60px_rgba(216,155,29,0.35)]
+                                                "
+
                                             >
                                                 View Projects
                                             </MagneticButton>

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import SmoothScrolls from "@/components/animations/SmoothScrolls";
-import LoaderProvider from "@/components/loaders/LoaderProvider";
-import PageTransition from "@/components/loaders/PageTransition";
 
 import "./globals.css";
 
-import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScrolls from "@/components/animations/SmoothScrolls";
+import LoaderProvider from "@/components/loaders/LoaderProvider";
+import PageTransition from "@/components/loaders/PageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +16,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   title: "Deepak Construction",
   description:
@@ -28,26 +28,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
-
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
     >
       <body className="bg-[#f5f3ee] text-black overflow-x-hidden antialiased">
-
-        {/* PREMIUM SMOOTH SCROLL */}
         <SmoothScrolls />
 
-        {/* PAGE CONTENT */}
-
         <LoaderProvider>
-
-          <PageTransition>
-            {children}
-          </PageTransition>
-
+          <PageTransition>{children}</PageTransition>
         </LoaderProvider>
       </body>
     </html>

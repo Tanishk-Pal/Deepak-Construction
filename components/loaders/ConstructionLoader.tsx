@@ -3,130 +3,113 @@
 import { motion } from "framer-motion";
 
 export default function ConstructionLoader() {
-
     return (
-
         <motion.div
             initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
-            className="fixed inset-0 z-[9999] bg-[#0b0b0b] flex items-center justify-center overflow-hidden"
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 z-[9999] bg-[#0b0b0b] overflow-hidden flex items-center justify-center"
         >
+            {/* CINEMATIC SCREEN WIPE */}
+            <motion.div
+                initial={{ x: "-100%" }}
+                animate={{ x: ["-100%", "0%", "100%"] }}
+                transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-y-0 left-0 w-full bg-[#d89b1d]"
+            />
 
-            {/* GLOW */}
-            <div className="absolute w-[500px] h-[500px] bg-[#d89b1d]/10 blur-[120px] rounded-full" />
+            {/* DARK GLASS OVERLAY */}
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
 
-            <div className="relative flex flex-col items-center">
+            {/* GOLD GLOW */}
+            <div className="absolute w-[500px] h-[500px] bg-[#d89b1d]/20 blur-[140px] rounded-full" />
 
-                {/* BUILDING */} <div className="relative h-[220px] w-[260px] flex items-end justify-center">
+            <div className="relative z-20 flex flex-col items-center">
 
-                    {/* BUILDING BLOCKS */}
+                {/* BUILDING */}
+                <div className="relative h-[180px] w-[280px] flex items-end justify-center">
                     <div className="absolute bottom-0 flex gap-2 items-end">
-
-                        {[0, 1, 2, 3].map((i) => (
-
+                        {[0, 1, 2, 3, 4].map((i) => (
                             <motion.div
                                 key={i}
                                 initial={{ height: 0, opacity: 0 }}
-                                animate={{
-                                    height: [0, 40 + i * 30],
-                                    opacity: 1,
-                                }}
+                                animate={{ height: 45 + i * 18, opacity: 1 }}
                                 transition={{
-                                    delay: i * 0.3,
-                                    duration: 0.8,
+                                    delay: 0.3 + i * 0.18,
+                                    duration: 0.6,
                                     ease: "easeOut",
                                 }}
-                                className="w-12 bg-[#d89b1d] rounded-t-md shadow-[0_0_20px_rgba(216,155,29,0.35)]"
+                                className="w-10 bg-[#d89b1d] rounded-t-md shadow-[0_0_25px_rgba(216,155,29,0.35)]"
                             />
-
                         ))}
-
                     </div>
 
-                    {/* JCB BODY */}
+                    {/* EXCAVATOR MOVEMENT */}
                     <motion.div
-                        initial={{ x: -120 }}
-                        animate={{ x: 0 }}
-                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        initial={{ x: -260 }}
+                        animate={{ x: 210 }}
+                        transition={{
+                            duration: 2,
+                            ease: [0.16, 1, 0.3, 1],
+                        }}
                         className="absolute bottom-0 left-0"
                     >
-
-                        {/* JCB */}
-                        <div className="relative flex flex-col items-center">
-
+                        <div className="relative">
                             {/* ARM */}
                             <motion.div
-                                animate={{
-                                    rotate: [-10, 20, -10],
-                                }}
+                                animate={{ rotate: [-18, 18, -8] }}
                                 transition={{
                                     repeat: Infinity,
-                                    duration: 2,
+                                    duration: 1.2,
                                     ease: "easeInOut",
                                 }}
                                 className="origin-bottom-left absolute bottom-10 left-12"
                             >
+                                <div className="w-24 h-3 bg-[#d89b1d] rounded-full" />
+                                <div className="absolute right-[-8px] top-[-2px] w-6 h-6 bg-[#d89b1d] rounded-sm rotate-12" />
+                            </motion.div>
 
-                                <div className="w-20 h-3 bg-[#d89b1d] rounded-full" />
+                            {/* BODY */}
+                            <div className="w-28 h-14 bg-[#d89b1d] rounded-xl shadow-[0_0_35px_rgba(216,155,29,0.35)]" />
 
-                                <div className="absolute right-0 top-0 w-5 h-5 bg-[#d89b1d] rounded-sm" />
-
-                            </motion.div>  {/* BODY */}
-                            <div className="w-24 h-12 bg-[#d89b1d] rounded-xl shadow-[0_0_30px_rgba(216,155,29,0.3)]" />
+                            {/* CABIN */}
+                            <div className="absolute -top-7 left-8 w-10 h-8 bg-[#f4c150] rounded-t-lg border border-black/20" />
 
                             {/* WHEELS */}
-                            <div className="flex justify-between w-full px-2 mt-1">
-
-                                <motion.div
-                                    animate={{ rotate: 360 }}
-                                    transition={{
-                                        repeat: Infinity,
-                                        duration: 2,
-                                        ease: "linear",
-                                    }}
-                                    className="w-6 h-6 rounded-full bg-black border-2 border-gray-700"
-                                />
-
-                                <motion.div
-                                    animate={{ rotate: 360 }}
-                                    transition={{
-                                        repeat: Infinity,
-                                        duration: 2, ease: "linear",
-                                    }}
-                                    className="w-6 h-6 rounded-full bg-black border-2 border-gray-700"
-                                />
-
+                            <div className="flex justify-between w-28 px-2 mt-1">
+                                {[0, 1].map((i) => (
+                                    <motion.div
+                                        key={i}
+                                        animate={{ rotate: 360 }}
+                                        transition={{
+                                            repeat: Infinity,
+                                            duration: 0.9,
+                                            ease: "linear",
+                                        }}
+                                        className="w-7 h-7 rounded-full bg-black border-2 border-gray-700"
+                                    />
+                                ))}
                             </div>
-
                         </div>
-
                     </motion.div>
-
                 </div>
 
                 {/* TEXT */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 1 }}
-                    className="text-center mt-12"
-                >  <h1 className="text-4xl md:text-5xl font-black text-white tracking-[-2px]">
-
-                        Deepak
-                        <span className="text-[#d89b1d]"> Construction</span>
-
+                    transition={{ delay: 0.7, duration: 0.7 }}
+                    className="text-center mt-10"
+                >
+                    <h1 className="text-3xl md:text-5xl font-black text-white">
+                        Deepak <span className="text-[#d89b1d]">Construction</span>
                     </h1>
 
-                    <p className="text-gray-400 mt-5 tracking-[4px] uppercase text-xs">
-                        Building Infrastructure...
+                    <p className="text-gray-400 mt-4 tracking-[4px] uppercase text-xs">
+                        Building Your Page...
                     </p>
-
                 </motion.div>
-
             </div>
-
         </motion.div>
     );
 }

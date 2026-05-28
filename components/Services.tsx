@@ -59,8 +59,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#f5f3ee] text-black py-32 px-6"
-    >
+      className="relative overflow-hidden bg-[#f5f3ee] text-black py-20 md:py-32 px-4 sm:px-6"    >
 
       {/* BACKGROUND GLOW */}
       <div className="absolute top-[-10%] right-[-10%] w-[700px] h-[700px] bg-[#d89b1d]/10 blur-[140px] rounded-full" />
@@ -84,15 +83,14 @@ export default function Services() {
 
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-[-3px]">
-
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[1.05] tracking-[-2px] md:tracking-[-3px]">
               Premium Infrastructure
               <span className="text-[#d89b1d]"> Solutions</span>
 
             </h2>
 
 
-            <p className="text-gray-600 text-lg leading-10 mt-10 max-w-4xl">
+            <p className="text-gray-600 text-base sm:text-lg leading-8 sm:leading-10 mt-8 max-w-4xl">
 
               Deepak Construction delivers reliable infrastructure,
               excavation, industrial pipeline and civil construction
@@ -125,7 +123,7 @@ export default function Services() {
 
 
               <div className="
-                    grid lg:grid-cols-2
+                    grid lg:grid-cols-2 items-center
                     overflow-hidden
                     rounded-[42px]
                     bg-white
@@ -137,8 +135,8 @@ export default function Services() {
                   ">
 
                 {/* IMAGE */}
-                <div className="relative overflow-hidden h-[320px] md:h-[420px] lg:h-[520px]">
-                  
+                <div className="relative overflow-hidden h-[260px] sm:h-[340px] md:h-[420px] lg:h-[520px]">
+
 
                   <motion.img
                     whileHover={{ scale: 1.08 }}
@@ -153,7 +151,7 @@ export default function Services() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="p-10 md:p-14 flex flex-col justify-center relative overflow-hidden">
+                <div className="p-6 sm:p-10 md:p-14 flex flex-col justify-center relative overflow-hidden">
 
                   {/* GLOW */}
                   <div className="absolute top-[-20%] right-[-10%] w-[250px] h-[250px] bg-[#d89b1d]/10 blur-[90px] rounded-full" />
@@ -171,7 +169,8 @@ export default function Services() {
 
                   {/* TITLE */}
                   <h3 className="
-                        text-3xl
+                        text-2xl
+                        sm:text-3xl
                         md:text-5xl
                         font-black
                         leading-tight
@@ -185,8 +184,10 @@ export default function Services() {
                   {/* DESCRIPTION */}
                   <p className="
                         text-gray-600
-                        text-lg
-                        leading-10
+                        text-base
+                        sm:text-lg
+                        leading-8
+                        sm:leading-10
                         max-w-2xl
                         relative z-10
                       ">
@@ -194,7 +195,7 @@ export default function Services() {
                   </p>
 
                   {/* STATS */}
-                  <div className="grid grid-cols-2 gap-6 mt-12 relative z-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-10 sm:mt-12 relative z-10">
 
                     {[
                       {
@@ -237,8 +238,8 @@ export default function Services() {
                         className="
                               bg-[#f8f6f1]
                               border border-black/5
-                              rounded-[28px]
-                              p-7
+                              rounded-[22px] sm:rounded-[28px]
+                              p-5 sm:p-7
                               transition-all
                               duration-500
                               hover:shadow-[0_10px_40px_rgba(216,155,29,0.12)]
@@ -269,7 +270,7 @@ export default function Services() {
 
                         <h4 className="
                               text-[#d89b1d]
-                              text-4xl
+                              text-3xl sm:text-4xl
                               font-black
                               relative z-10
                             ">
@@ -298,21 +299,22 @@ export default function Services() {
                     <Link href={`/services/${service.slug}`}>
 
                       <MagneticButton
-  className="
-  bg-[#d89b1d]
-  text-black
-  px-10
-  py-5
-  rounded-full
-  font-black
-  hover:scale-105
-  transition-all
-  duration-300
-  shadow-[0_0_60px_rgba(216,155,29,0.35)]
-  "
->
-  View Projects
-</MagneticButton>
+                        className="
+                        w-full sm:w-auto
+                      bg-[#d89b1d]
+                      text-black
+                        px-8 sm:px-10
+                        py-4 sm:py-5
+                        rounded-full
+                        font-black
+                        hover:scale-105
+                        transition-all
+                        duration-300
+                        shadow-[0_0_60px_rgba(216,155,29,0.35)]
+                        "
+                      >
+                        View Projects
+                      </MagneticButton>
 
                     </Link>
 
